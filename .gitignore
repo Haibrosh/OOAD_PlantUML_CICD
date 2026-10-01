@@ -1,0 +1,33 @@
+# 1. Các file rác của Hệ điều hành (OS)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 2. Cấu hình IDE / Text Editor cá nhân (VS Code, IntelliJ, Eclipse, Visual Studio)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
+.metadata/
+
+# 3. Các file build tạm thời và thư mục thư viện của Source Code (Dành cho thư mục src/)
+# (Bao gồm các ngôn ngữ phổ biến như Java, Node.js, Python, C#)
+node_modules/
+target/
+bin/
+obj/
+out/
+build/
+__pycache__/
+*.class
+*.pyc
+*.jar
+*.war
