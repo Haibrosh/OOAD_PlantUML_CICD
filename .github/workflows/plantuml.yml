@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "docs/**/*.puml"
+      - "scripts/update_readme.py"
       - ".github/workflows/plantuml.yml"
   workflow_dispatch:
 
@@ -17,6 +18,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Validate PlantUML diagrams
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}:/workspace" \
+            ghcr.io/plantuml/plantuml \
+            -checkonly /workspace/docs
 
       - name: Render PlantUML diagrams
         run: |
@@ -32,7 +40,11 @@ jobs:
             ghcr.io/plantuml/plantuml \
             -tsvg -o /workspace/images /workspace/docs
 
-      - name: Commit generated diagrams
+      - name: Update README
+        run: |
+          python scripts/update_readme.py
+
+      - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
