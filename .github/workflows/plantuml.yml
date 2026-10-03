@@ -24,11 +24,13 @@ jobs:
           docker run --rm \
             -v "${{ github.workspace }}:/workspace" \
             ghcr.io/plantuml/plantuml \
-            -checkonly /workspace/docs
+            --check-syntax /workspace/docs
 
       - name: Render PlantUML diagrams
         run: |
           mkdir -p images
+          rm -f images/*.png images/*.svg
+          chmod -R u+rwX images
 
           docker run --rm \
             -v "${{ github.workspace }}:/workspace" \
