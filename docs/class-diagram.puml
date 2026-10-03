@@ -14,20 +14,7 @@ class Order {
     +calculateTotal(): double
 }
 
-class OrderItem {
-    +quantity: int
-    +unitPrice: double
-    +calculateSubtotal(): double
-}
-
-class FoodItem {
-    +itemId: int
-    +name: String
-    +unitPrice: double
-}
 
 Customer "1" -- "0..*" Order
-Order "1" *-- "1..*" OrderItem
-OrderItem "*" -- "1" FoodItem
 
 @enduml
