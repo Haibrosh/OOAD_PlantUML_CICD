@@ -1,0 +1,11 @@
+@startuml
+
+class Customer {
+    +name: String
+    +email: String
+
+class Order {
+    +orderId: int
+}
+
+@enduml

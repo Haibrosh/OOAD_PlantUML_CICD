@@ -19,6 +19,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate PlantUML diagrams
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}:/workspace" \
+            ghcr.io/plantuml/plantuml \
+            --check-syntax /workspace/docs
+
       - name: Render PlantUML diagrams
         run: |
           mkdir -p images
