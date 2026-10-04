@@ -2,6 +2,7 @@
 
 class Customer {
     +name: String
+    +age: Int
 }
 
 Customer "1" -- "0..*" 
