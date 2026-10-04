@@ -14,7 +14,13 @@ class Order {
     +calculateTotal(): double
 }
 
+class OrderItem {
+    +quantity: int
+    +unitPrice: double
+    +calculateSubtotal(): double
+}
 
 Customer "1" -- "0..*" Order
+Order "1" *-- "1..*" OrderItem
 
 @enduml
