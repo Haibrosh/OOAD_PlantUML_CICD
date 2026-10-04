@@ -2,10 +2,8 @@
 
 class Customer {
     +name: String
-    +email: String
-
-class Order {
-    +orderId: int
 }
+
+Customer "1" -- "0..*" 
 
 @enduml
