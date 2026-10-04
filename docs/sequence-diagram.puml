@@ -1,0 +1,16 @@
+@startuml
+
+actor Customer
+participant OrderController
+participant OrderService
+participant OrderRepository
+
+Customer -> OrderController: checkout(cartDetails)
+OrderController -> OrderService: createOrder(cartDetails)
+OrderService -> OrderService: calculateTotal()
+OrderService -> OrderRepository: save(order)
+OrderRepository --> OrderService: savedOrder
+OrderService --> OrderController: order
+OrderController --> Customer: displayOrderSuccess(order)
+
+@enduml
