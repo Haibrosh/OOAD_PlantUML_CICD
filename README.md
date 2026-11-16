@@ -16,4 +16,10 @@
 
 [View SVG](images/sequence-diagram.svg)
 
+### Test Diagram
+
+![Test Diagram](images/test-diagram.png)
+
+[View SVG](images/test-diagram.svg)
+
 <!-- PLANTUML:END -->
