@@ -5,17 +5,6 @@ class Customer {
     +age: Int
 }
 
-class Order {
-    +orderId: Int
-    +status: String
-}
-
-class Test {
-    +testId: Int
-    +description: String
-}
-
-Customer "1" -- "0..*" Order
-Customer "1" -- "0..*" Test
+Customer "1" -- "0..*" 
 
 @enduml
