@@ -1,10 +1,18 @@
 @startuml
 
-class Customer {
-    +name: String
-    +age: Int
+class Order {
+    +orderId: Int
+    +status: String
 }
 
-Customer "1" -- "0..*" 
+class Test {
+    +testId: Int
+    +description: String
+}
+
+Customer "1" -- "0..*" Order
+Customer "1" -- "0..*" Test
+
 
 @enduml
+
