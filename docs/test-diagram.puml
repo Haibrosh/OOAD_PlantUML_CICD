@@ -1,12 +1,9 @@
-class Order {
-    +orderId: Int
-    +status: String
-}
+@startuml
 
-class Test {
-    +testId: Int
-    +description: String
+class Customer {
+    +name: String
+    +age: Int
 }
+Customer "0" -- "0..*"
+@enduml
 
-Customer "1" -- "0..*" Order
-Customer "1" -- "0..*" Test
