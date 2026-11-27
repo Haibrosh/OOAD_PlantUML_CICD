@@ -1,13 +1,26 @@
-class Order {
-    +orderId: Int
-    +status: String
+@startuml
+
+class Customer {
+    +customerId: int
+    +name: String
+    +email: String
+    +placeOrder(): Order
 }
 
-class Test {
-    +testId: Int
-    +description: String
+class Order {
+    +orderId: int
+    +status: OrderStatus
+    +totalAmount: double
+    +calculateTotal(): double
+}
+
+class OrderItem {
+    +quantity: int
+    +unitPrice: double
+    +calculateSubtotal(): double
 }
 
 Customer "1" -- "0..*" Order
-Customer "1" -- "0..*" Test
+Order "1" *-- "1..*" OrderItem
 
+@enduml
